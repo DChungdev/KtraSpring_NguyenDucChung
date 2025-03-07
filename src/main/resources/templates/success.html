@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success - Spring Shop</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Centering the content */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        /* Success Box Styling */
+        .success-box {
+            background-color: #28a745;
+            color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        /* Success Icon */
+        .success-box .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        /* Heading Styles */
+        .success-box h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        /* Success Message */
+        .success-box p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* Button Styling */
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* Button Hover Effect */
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            .success-box {
+                padding: 30px;
+                width: 90%;
+            }
+
+            .success-box h1 {
+                font-size: 28px;
+            }
+
+            .success-box p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="success-box">
+        <!-- Success Icon -->
+        <div class="icon">&#x2714;</div>
+
+        <!-- Success Heading -->
+        <h1>Đặt hàng thành công!</h1>
+
+        <!-- Success Message -->
+        <p>Cảm ơn bạn đã mua hàng. Đơn hàng của bạn đang được xử lý và sẽ sớm được giao đến.</p>
+
+        <!-- Button to go back to the homepage -->
+        <a href="/" class="btn">Quay lại trang chủ</a>
+    </div>
+</div>
+
+</body>
+</html>
