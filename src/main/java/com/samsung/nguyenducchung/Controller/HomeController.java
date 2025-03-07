@@ -16,7 +16,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.context.request.WebRequest;
@@ -153,4 +155,28 @@ public class HomeController {
         return "redirect:/";
     }
 
+
+    // Hiển thị form đăng ký
+    @GetMapping("/register")
+    public String showRegisterForm(Model model) {
+        model.addAttribute("user", new Users());
+        return "register";
+    }
+
+    // Xử lý đăng ký
+    @PostMapping("/register")
+    public String registerUser(@ModelAttribute("user") Users user, BindingResult bindingResult, Model model) {
+
+        // Kiểm tra nếu email đã tồn tại
+        if (userService.findByUsername(user.getEmail()) != null) {
+            model.addAttribute("emailError", "Email already exists!");
+            return "register";
+        }
+
+        // Đăng ký người dùng mới
+        userService.registerUser(user);
+
+        // Chuyển hướng đến trang login
+        return "redirect:/login";
+    }
 }

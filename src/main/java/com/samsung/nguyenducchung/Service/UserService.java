@@ -29,4 +29,13 @@ public class UserService {
     public Users findByUsername(String username) {
         return userRepository.findByUsername(username);
     }
+
+    public Users registerUser(Users user) {
+        // Mã hóa password trước khi lưu
+        user.setPassword(user.getPassword());
+        user.setRole("Admin");
+        user.setUsername(user.getEmail());
+        // Lưu người dùng vào DB
+        return userRepository.save(user);
+    }
 }
